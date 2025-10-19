@@ -16,7 +16,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const links = [
+type Link = {
+  href: string;
+  label: string;
+};
+
+const links: Link[] = [
   { href: "/", label: "Home" },
   { href: "/team", label: "Team" },
   { href: "/contatti", label: "Contatti" }
@@ -29,7 +34,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="container flex h-16 items-center justify-between gap-6">
         <Link className="flex items-center gap-3" href="/">
-          <Image alt="Hideout Polito logo" src="/logo.svg" width={36} height={36} priority />
+          <Image alt="Hideout Polito logo" src="/logo.jpg" width={36} height={36} priority />
           <span className="font-outfit text-lg font-semibold tracking-tight text-foreground">Hideout Polito</span>
         </Link>
 
@@ -40,7 +45,7 @@ export function SiteHeader() {
                 <NavigationMenuItem key={link.href}>
                   <NavigationMenuLink asChild>
                     <Link
-                      href={link.href}
+                      href={link.href as any}
                       className={cn(
                         navigationMenuTriggerStyle,
                         pathname === link.href && "bg-background text-foreground shadow-sm"

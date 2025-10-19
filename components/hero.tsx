@@ -34,7 +34,7 @@ export function Hero() {
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border bg-card shadow-xl">
             <Image
               alt="Membri di Hideout Polito che collaborano in uno spazio di coworking"
-              src="/placeholder.png"
+              src="/fotodigruppo.jpg"
               fill
               className="object-cover"
               priority
